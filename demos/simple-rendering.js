@@ -46,7 +46,7 @@ let vertexShader = `
     
     void main()
     {
-        gl_Position = modelViewProjectionMatrix * vec4(position, 1.0);
+        gl_Position = modelViewProjectionMatrix * vec4(position, 2.0);
         vec3 viewNormal = (modelViewMatrix * vec4(normal, 0.0)).xyz;
         color = mix(bgColor * 0.8, fgColor, viewNormal.z) + pow(viewNormal.z, 20.0);
     }
@@ -111,7 +111,7 @@ function draw(timems) {
     mat4.lookAt(viewMatrix, vec3.fromValues(3, 0, 2), vec3.fromValues(0, 0, 0), vec3.fromValues(0, 1, 0));
     mat4.multiply(viewProjMatrix, projMatrix, viewMatrix);
 
-    mat4.fromXRotation(rotateXMatrix, time * 0.1136);
+    mat4.fromXRotation(rotateXMatrix, time * 0);
     mat4.fromYRotation(rotateYMatrix, time * 0.2235);
     mat4.multiply(modelMatrix, rotateXMatrix, rotateYMatrix);
 

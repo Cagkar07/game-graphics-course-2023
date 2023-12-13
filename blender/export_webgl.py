@@ -6,7 +6,7 @@
 bl_info = {
     "name": "ExportWebGL",
     "category": "Object",
-    "blender": (2, 80, 0)
+    "blender": (2, 60, 0)
 }
 
 import bpy
